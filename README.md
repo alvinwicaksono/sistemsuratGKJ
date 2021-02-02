@@ -1,0 +1,1 @@
+Sistem Manajemen Surat Sinode GKJ
