@@ -16,32 +16,31 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/test','app\Http\Controllers\TestController@index');
 
 
- 
+
 Route::get('/', 'AuthController@showFormLogin')->name('login');
 Route::get('login', 'AuthController@showFormLogin')->name('login');
 Route::post('login', 'AuthController@login');
 Route::get('register', 'AuthController@showFormRegister')->name('register');
 Route::post('register', 'AuthController@register');
- 
+
 Route::group(['middleware' => 'auth'], function () {
- 
+
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('logout', 'AuthController@logout')->name('logout');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('suratmasuk', 'SuratmasukController@index')->name('suratmasuk');
+    Route::get('tsuratmasuk', 'SuratmasukController@create')->name('tsuratmasuk');
 
 //Sistem
     Route::get('pengguna', 'PenggunaController@index')->name('pengguna');
     Route::get('bidang', 'BidangController@index')->name('bidang');
     Route::get('subbidang', 'SubbidangController@index')->name('subbidang');
-    
+
 /*Route::get('suratmasuk', function () {
     return view('dashboard/suratmasuk');
 });*/
 
-Route::get('tsuratmasuk', function () {
-    return view('dashboard/tsuratmasuk');
-});
+
 
 Route::get('dismasuk', function () {
     return view('dashboard/dismasuk');
@@ -77,7 +76,7 @@ Route::get('konsep', function () {
     return view('sekum/konsep');
 });
 
- 
+
 });
 
 Route::get('backup', function () {
@@ -99,3 +98,7 @@ Route::get('suratmasuksekum', function () {
 Route::get('suratkeluarsekum', function () {
     return view('sekum/suratkeluarsekum');
 });
+
+
+//subBidang
+Route::post('subcat', 'SuratmasukController@subCat')->name('subcat');

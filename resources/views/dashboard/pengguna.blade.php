@@ -50,20 +50,20 @@
                 </tr>
               </thead>
               <tbody>
-              	@foreach($liat as $no => $item)
+              	@foreach($response['data'] as $no => $item)
                 <tr>
 	                <td>{{ ++$no }}</td>
-                  <td>{{ $item->name }}</td> 
-	                <td>{{ $item->email }}</td>
-	                
+                  <td>{{ $item['name'] }}</td>
+	                <td>{{ $item['email'] }}</td>
+
                   <td>
-                    @if($item->role=="1")
-                    Administrator
-                    @elseif($item->role=="2")
-                    Kuli
+                    @if($item['role']=="1")
+                    Petugas Administrasi
+                    @elseif($item['role']=="2")
+                    Sekretaris Umum
                     @endif
                   </td>
-                  
+
 	                <td>
 						          <div class="text-left">
                         <div class="text-left">
@@ -73,7 +73,7 @@
                           <a href="#" class="btn btn-sm bg-danger" data-toggle="modal" data-target="#modal-delete">
                             <i class="fas fa-trash"></i>
                           </a>
-                        </div>                             
+                        </div>
                       </div>
 	                </td>
                 </tr>
@@ -105,7 +105,7 @@
               <p>Isi Rekomendasi</p>
               <br>
               <p>Telah diperiksa</p>
-            </div>  
+            </div>
             <div class="col-md6">
               <p>: 12 April 2020</p>
               <p>: SK/2020/B1/SB102/1001</p> <!-- belum dikirimkan/belum diacc maka tidak muncul -->
@@ -114,9 +114,9 @@
               <p>: Segera Buat Surat Tugas Untuk<br>
               Pdt. Aris Widaryanto</p>
               <p>: Pdt. Sundoyo(sekum)</p> <!-- belum diacc/divalidasi maka tidak muncul -->
-            </div>  
+            </div>
           </div>
-          
+
 
         </div>
         <div class="modal-footer justify-content-between">

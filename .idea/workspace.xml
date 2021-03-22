@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="46b668c9-251b-4017-858e-7ba25abd7cc8" name="Default Changelist" comment="" />
+    <list default="true" id="46b668c9-251b-4017-858e-7ba25abd7cc8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PenggunaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PenggunaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SuratmasukController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SuratmasukController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/pengguna.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/pengguna.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/tsuratmasuk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/tsuratmasuk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +147,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../suratGKJ" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -159,6 +170,20 @@
       <updated>1612151417017</updated>
       <workItem from="1612151418921" duration="1334000" />
       <workItem from="1612189264651" duration="1032000" />
+      <workItem from="1612361024876" duration="1012000" />
+      <workItem from="1613565319842" duration="1997000" />
+      <workItem from="1613911565008" duration="6720000" />
+      <workItem from="1614155084777" duration="1203000" />
+      <workItem from="1614168861656" duration="592000" />
+      <workItem from="1614494840130" duration="410000" />
+      <workItem from="1614592620157" duration="1223000" />
+      <workItem from="1614667875135" duration="2191000" />
+      <workItem from="1614758510730" duration="492000" />
+      <workItem from="1615468486347" duration="5409000" />
+      <workItem from="1615616795229" duration="274000" />
+      <workItem from="1615732075353" duration="1495000" />
+      <workItem from="1615786747216" duration="7045000" />
+      <workItem from="1615976354975" duration="652000" />
     </task>
     <servers />
   </component>

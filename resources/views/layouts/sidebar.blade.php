@@ -50,29 +50,29 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-reply"></i>
-              <p>
-                Surat Keluar
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('suratkeluar')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Surat Keluar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('tsuratkeluar')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Surat Keluar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+{{--          <li class="nav-item has-treeview">--}}
+{{--            <a href="#" class="nav-link">--}}
+{{--              <i class="nav-icon fas fa-reply"></i>--}}
+{{--              <p>--}}
+{{--                Surat Keluar--}}
+{{--                <i class="right fas fa-angle-left"></i>--}}
+{{--              </p>--}}
+{{--            </a>--}}
+{{--            <ul class="nav nav-treeview">--}}
+{{--              <li class="nav-item">--}}
+{{--                <a href="{{url('suratkeluar')}}" class="nav-link">--}}
+{{--                  <i class="far fa-circle nav-icon"></i>--}}
+{{--                  <p>Daftar Surat Keluar</p>--}}
+{{--                </a>--}}
+{{--              </li>--}}
+{{--              <li class="nav-item">--}}
+{{--                <a href="{{url('tsuratkeluar')}}" class="nav-link">--}}
+{{--                  <i class="far fa-circle nav-icon"></i>--}}
+{{--                  <p>Tambah Surat Keluar</p>--}}
+{{--                </a>--}}
+{{--              </li>--}}
+{{--            </ul>--}}
+{{--          </li>--}}
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-thumbs-up"></i>
@@ -127,12 +127,12 @@
               <p>Laporan Surat Masuk</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{url('rsuratkeluar')}}" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Laporan Surat Keluar</p>
-            </a>
-          </li>
+{{--          <li class="nav-item">--}}
+{{--            <a href="{{url('rsuratkeluar')}}" class="nav-link">--}}
+{{--              <i class="far fa-circle nav-icon"></i>--}}
+{{--              <p>Laporan Surat Keluar</p>--}}
+{{--            </a>--}}
+{{--          </li>--}}
           <li class="nav-item">
             <a href="{{url('rexpedisi')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
@@ -214,22 +214,22 @@
       </a>
     </li>
 
-    <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-reply"></i>
-              <p>
-                Surat Keluar
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('suratkeluarsekum')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Surat Keluar</p>
-                </a>
-              </li>
-              
+{{--    <li class="nav-item has-treeview">--}}
+{{--            <a href="#" class="nav-link">--}}
+{{--              <i class="nav-icon fas fa-reply"></i>--}}
+{{--              <p>--}}
+{{--                Surat Keluar--}}
+{{--                <i class="right fas fa-angle-left"></i>--}}
+{{--              </p>--}}
+{{--            </a>--}}
+{{--            <ul class="nav nav-treeview">--}}
+{{--              <li class="nav-item">--}}
+{{--                <a href="{{url('suratkeluarsekum')}}" class="nav-link">--}}
+{{--                  <i class="far fa-circle nav-icon"></i>--}}
+{{--                  <p>Daftar Surat Keluar</p>--}}
+{{--                </a>--}}
+{{--              </li>--}}
+
             </ul>
      <li class="nav-item">
       <a href="{{ route('logout') }}" class="nav-link">
@@ -241,7 +241,7 @@
     </li>
 
 @endif
-   
+
 
   </ul>
 </nav>

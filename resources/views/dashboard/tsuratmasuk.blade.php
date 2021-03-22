@@ -13,7 +13,7 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0 text-dark">Surat Masuk</h1>
-              
+
 <!-- Alert jika Surat Berhasil diinputkan -->
               <div class="alert alert-success alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -44,13 +44,13 @@
                   <div class="form-group row">
                       <div class="col-sm-2">
                         <label for="nomorsurat" class="col-form-label">Nomor Surat</label>
-                      </div> 
+                      </div>
                       <div class="col-sm-4">
                         <input type="text" class="form-control" id="nomorsurat" placeholder="Auto Generate -Format:SM/2020/B1/SB101/1" disabled>
                       </div>
                     <div class="col-sm-2">
                       <label for="tgldokumen" class="col-form-label">Tanggal Dokumen</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                       <input type="date" class="form-control" id="tgldokumen" placeholder="Tanggal Surat">
                     </div>
@@ -62,60 +62,52 @@
                   <div class="form-group row">
                     <div class="col-sm-2">
                       <label for="bidang" class="col-form-label">Bidang</label>
-                    </div> 
+                    </div>
                     <div class="col-sm-4">
-                      <select class="form-control">
-                        <option>Pilih Bidang</option>
-                        <option>Keesaan</option>
-                        <option>Ketenagaan Gereja dan Pengembangannya</option>
-                        <option>Studi dan Pengembangan</option>
-                        <option>Kesaksian dan Pelayanan</option>
-                        <option>Pembinaan Warga Gereja</option>
-                        <option>Penatalayanan</option>
-                        <option>Sekretariat Umum</option>
+                      <select class="form-control" name="bidang" id="bidang">
+                          <option selected>Select category</option>
+                          @foreach($bidang['data'] as $bidang)
+                        <option value="{{$bidang['id']}}">{{$bidang['nama_bidang']}}</option>
+                          @endforeach
                       </select>
                     </div>
                     <div class="col-sm-2">
                       <label for="subbidang" class="col-form-label">Sub Bidang</label>
-                    </div> 
+                    </div>
                     <div class="col-sm-4">
-                      <select class="form-control">\
-                        <option>Pilih Subbidang</option>
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
-                      </select>  
+                      <select class="form-control" name="subbidang" id="subcategory">
+                      </select>
                     </div>
                   </div>
+                    <button type="submit">Generate Nomor Surat</button>
+                    <hr>
 
                   <div class="form-group row">
                     <div class="col-sm-2">
                       <label for="namasurat" class="col-form-label">Nama Surat</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                        <input type="text" class="form-control" id="namasurat" placeholder="Judul/ Nama Surat">
                     </div>
-                  
+
                     <div class="col-sm-2">
                       <label for="sumbersurat" class="col-form-label">Sumber Surat</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                       <input type="text" class="form-control" id="sumbersurat" placeholder="Asal Surat Masuk dari ....">
                     </div>
-                  </div>                    
+                  </div>
 
                    <div class="form-group row">
                     <div class="col-sm-2">
                       <label for="inputEmail3" class="col-form-label">Perihal</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                       <input type="email" class="form-control" id="Perihal" placeholder="Perihal Surat ....">
                     </div>
                     <div class="col-sm-2">
                       <label for="nosurat" class="col-form-label">Tanggal Masuk</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                        <input type="text" class="form-control" id="Tglmasuk" placeholder="Date Now/timestamp" disabled>
                     </div>
@@ -144,7 +136,7 @@
                   <div class="form-group row">
                     <div class="col-sm-2">
                       <label for="format" class="col-form-label">Format</label>
-                    </div> 
+                    </div>
                     <div class="col-sm-4">
                       <select class="form-control">
                         <option>- Pilih Format - </option>
@@ -178,31 +170,31 @@
                     </div>
                     <div class="col-sm-2">
                       <label for="Prioritas" class="col-form-label">Prioritas</label>
-                    </div> 
+                    </div>
                     <div class="col-sm-4">
                       <select class="form-control">\
                         <option>Sangat Penting</option>
                         <option>Segera</option>
                         <option>Biasa</option>
-                      </select>  
+                      </select>
                     </div>
 
                     <!--
 
-                      Jika sudah Input Form akan muncul Option Keterangan : 
+                      Jika sudah Input Form akan muncul Option Keterangan :
                       <div class="col-sm-2">
                         <label for="Keterangan" class="col-form-label">Prioritas</label>
-                      </div> 
+                      </div>
                       <div class="col-sm-4">
                         <select class="form-control">\
                           <option>Dibalas</option>
                           <option>Tidak dibalas</option>
-                        </select>  
+                        </select>
                       </div>
-                      
+
                       <div class="col-sm-2">
                       <label for="tgldokumen" class="col-form-label">Tanggal Dokumen</label>
-                    </div> 
+                    </div>
                      <div class="col-sm-4">
                       <input type="date" class="form-control" id="tgldokumen" placeholder="Tanggal Surat">
                     </div>
@@ -213,7 +205,7 @@
   		              <div class="text-left">
                       <button class="btn btn-lg bg-info float-right" type="submit"><i class="fas fa-save"></i> Simpan</button>
                       <button class="btn btn-lg bg-danger " type="reset"><i class="fas fa-window-close"></i> Batal</button>
-                    </div>                
+                    </div>
   	              </div>
                 </div>
               </form>
@@ -224,3 +216,29 @@
     </div>
   </section>
 @endsection
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).ready(function () {
+        $('#bidang').on('change',function(e) {
+            var cat_id = e.target.value;
+            $.ajax({
+                url:"{{ route('subcat') }}",
+                type:"POST",
+                data: {
+                    bidang: bidang
+                },
+                success:function (data) {
+                    $('#subcategory').empty();
+                    $.each(data.subcategories[0].subcategories,function(index,subcategory){
+                        $('#subcategory').append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
+                    })
+                }
+            })
+        });
+    });
+</script>
