@@ -25,24 +25,42 @@ Route::post('register', 'AuthController@register');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('home', 'HomeController@index')->name('home');
+    Route::get('home', 'DashboardController@index')->name('home');
     Route::get('logout', 'AuthController@logout')->name('logout');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    //Surat Masuk
     Route::get('suratmasuk', 'SuratmasukController@index')->name('suratmasuk');
     Route::get('tsuratmasuk', 'SuratmasukController@create')->name('tsuratmasuk');
+    Route::get('suratmasuk/teregistrasi','SuratmasukController@teregistrasi')->name('sm-teregistrasi');
+    Route::get('suratmasuk/waiting','SuratmasukController@waiting')->name('sm-waiting');
+    Route::get('suratmasuk/terdesposisi','SuratmasukController@terdesposisi')->name('sm-terdesposisi');
+    Route::get('suratmasuk/arsipwait','SuratmasukController@arsipWait')->name('sm-arsipwait');
+    Route::get('suratmasuk/diarsipkan','SuratmasukController@diarsipkan')->name('sm-diarsipkan');
+    Route::get('suratmasuk/selesai','SuratmasukController@selesai')->name('sm-selesai');
+    Route::get('aktifitas/{suratmasuk}','SuratmasukController@aktifitas')->name('sm-track');
 
 //Sistem
     Route::get('pengguna', 'PenggunaController@index')->name('pengguna');
     Route::get('bidang', 'BidangController@index')->name('bidang');
     Route::get('subbidang', 'SubbidangController@index')->name('subbidang');
-
-/*Route::get('suratmasuk', function () {
-    return view('dashboard/suratmasuk');
-});*/
+    Route::post('subbidang', 'SubbidangController@store')->name('add-subbidang');
 
 
+    /*Route::get('suratmasuk', function () {
+        return view('dashboard/suratmasuk');
+    });*/
 
-Route::get('dismasuk', function () {
+    //Sekum
+    Route::get('suratmasuksekum','SekumController@home')->name('sm-sekum');
+    Route::get('sekum/desposisi','SekumController@list')->name('sm-sekum-desposisi');
+    Route::get('sekum/selesai','SekumController@selesai')->name('sm-sekum-selesai');
+
+
+
+
+
+    Route::get('dismasuk', function () {
     return view('dashboard/dismasuk');
 });
 
@@ -91,10 +109,7 @@ Route::get('backup', function () {
 */
 
 //sekum
-Route::get('suratmasuksekum', function () {
-    return view('sekum/suratmasuksekum');
 
-});
 Route::get('suratkeluarsekum', function () {
     return view('sekum/suratkeluarsekum');
 });

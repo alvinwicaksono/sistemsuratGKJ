@@ -105,6 +105,68 @@
                                                         <p>: {{ $item['sumber_surat'] }}</p>
                                                     </div>
                                                 </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <label for="lembaga" class="col-form-label">Lembaga</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input list="lembaga" name="lembaga" class="form-control" placeholder="Pilih Lembaga">
+                                                        <datalist id="lembaga">
+
+                                                            @foreach($lembaga as $lembaga)
+                                                                <option value="{{$lembaga['NamaLembaga']}}"></option>
+                                                            @endforeach
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <label for="subbidang" class="col-form-label">Sub Bidang</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input list="tsubbidang" name="subbidang" class="form-control" placeholder="Pilih Sub Bidang">
+                                                        <datalist id="tsubbidang">
+                                                            <option>-- Pilih Subbidang --</option>
+                                                            @foreach($tsubbidang as $tsubbidang)
+                                                                <option value="{{$tsubbidang['nama_subBidang']}}"></option>
+                                                            @endforeach
+                                                        </datalist>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <label for="box" class="col-form-label">Box</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input list="box" name="box" class="form-control" placeholder="Pilih Box">
+                                                        <datalist id="box">
+
+                                                            @foreach($box as $box)
+                                                                <option value="{{$box['NamaBox']}}"></option>
+                                                            @endforeach
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <label for="format" class="col-form-label">Format</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input list="formats" name="formats" class="form-control" placeholder="Pilih Format">
+                                                        <datalist id="formats">
+                                                            @foreach($formats as $formats)
+                                                                <option value="{{$formats['NamaFormat']}}"></option>
+                                                            @endforeach
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <label class="col-form-label">Isi Surat</label>
@@ -135,7 +197,7 @@
 
                                             <div class="col-lg-6">
                                                 <H4>Form Disposisi Surat</H4>
-                                                <form method="POST" action="http://localhost:8000/api/desposisi">
+                                                <form method="POST" action="http://localhost:8000/api/arsip">
                                                     @csrf
                                                     <input type="hidden" name="suratmasuk_id" value="{{$item['suratmasuk_id']}}">
                                                     <div class="form-group row">
@@ -146,8 +208,8 @@
                                                         <div class="col-md-6">
                                                             <select class="form-control" name="penerima_id" id="penerima" required>
                                                                 <option selected>-- Pilih Penerima --</option>
-                                                                @foreach($penerima as $no => $hasil)
-                                                                <option value="{{$hasil['id']}}">{{$hasil['bidang']}} - {{$hasil['kepala_bidang']}}</option>
+                                                                @foreach($lembaga as $no => $hasil)
+                                                                <option value="{{$hasil['ID']}}">{{$hasil['NamaLembaga']}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

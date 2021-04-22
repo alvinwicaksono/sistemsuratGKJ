@@ -39,62 +39,67 @@
                 	<h3 class="card-title">Tambah Surat Masuk</h3>
               		</div>
               		 <div class="card-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" method="post" action="http://localhost:8000/api/registrasi" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id" value={{\Illuminate\Support\Facades\Auth::id()}}>
                 <div class="card-body">
                   <div class="form-group row">
-                      <div class="col-sm-2">
-                        <label for="nomorsurat" class="col-form-label">Nomor Surat</label>
-                      </div>
-                      <div class="col-sm-4">
-                        <input type="text" class="form-control" id="nomorsurat" placeholder="Auto Generate -Format:SM/2020/B1/SB101/1" disabled>
-                      </div>
+{{--                      <div class="col-sm-2">--}}
+{{--                        <label for="nomor_surat" class="col-form-label">Nomor Surat</label>--}}
+{{--                      </div>--}}
+{{--                      <div class="col-sm-4">--}}
+{{--                        <input type="text" class="form-control" name="nomor_surat" id="nomor_surat" placeholder="Auto Generate -Format:SM/2020/B1/SB101/1" >--}}
+{{--                      </div>--}}
                     <div class="col-sm-2">
-                      <label for="tgldokumen" class="col-form-label">Tanggal Dokumen</label>
+                      <label for="tgl_dokumen" class="col-form-label">Tanggal Dokumen</label>
                     </div>
                      <div class="col-sm-4">
-                      <input type="date" class="form-control" id="tgldokumen" placeholder="Tanggal Surat">
+                      <input type="date" class="form-control" name="tgl_dokumen" id="tgl_dokumen" placeholder="Tanggal Surat" required>
                     </div>
-                  </div>
+{{--                  </div>--}}
 <!--
   Bidang dan Sub Bidang merupakan dependent dropdown
     Setelah memili Bidang maka sub bidang akan mengikuti bidang yang akan dipilih
 -->
-                  <div class="form-group row">
-                    <div class="col-sm-2">
-                      <label for="bidang" class="col-form-label">Bidang</label>
-                    </div>
-                    <div class="col-sm-4">
-                      <select class="form-control" name="bidang" id="bidang">
-                          <option selected>Select category</option>
-                          @foreach($bidang['data'] as $bidang)
-                        <option value="{{$bidang['id']}}">{{$bidang['nama_bidang']}}</option>
-                          @endforeach
-                      </select>
-                    </div>
+{{--                  <div class="form-group row">--}}
+{{--                    <div class="col-sm-2">--}}
+{{--                      <label for="bidang" class="col-form-label">Bidang</label>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-4">--}}
+{{--                      <select class="form-control" name="bidang" id="bidang">--}}
+{{--                          <option selected>-- Pilih Bidang --</option>--}}
+{{--                          @foreach($bidang['data'] as $bidang)--}}
+{{--                        <option value="{{$bidang['id']}}">{{$bidang['nama_bidang']}}</option>--}}
+{{--                          @endforeach--}}
+{{--                      </select>--}}
+{{--                    </div>--}}
                     <div class="col-sm-2">
                       <label for="subbidang" class="col-form-label">Sub Bidang</label>
                     </div>
                     <div class="col-sm-4">
-                      <select class="form-control" name="subbidang" id="subcategory">
+                      <select class="form-control" name="subBidang_id" id="subcategory">
+                          <option selected>-- Pilih SubBidang --</option>
+                          @foreach($subBidang['data'] as $subBidang)
+                              <option value="{{$subBidang['id']}}">{{$subBidang['bidang']}} - {{$subBidang['nama_subBidang']}}</option>
+                          @endforeach
                       </select>
                     </div>
                   </div>
-                    <button type="submit">Generate Nomor Surat</button>
-                    <hr>
+{{--                    <button type="submit">Generate Nomor Surat</button>--}}
+{{--                    <hr>--}}
 
                   <div class="form-group row">
                     <div class="col-sm-2">
                       <label for="namasurat" class="col-form-label">Nama Surat</label>
                     </div>
                      <div class="col-sm-4">
-                       <input type="text" class="form-control" id="namasurat" placeholder="Judul/ Nama Surat">
+                       <input type="text" class="form-control" name="nama_surat" id="namasurat" placeholder="Judul/ Nama Surat" required>
                     </div>
 
                     <div class="col-sm-2">
                       <label for="sumbersurat" class="col-form-label">Sumber Surat</label>
                     </div>
                      <div class="col-sm-4">
-                      <input type="text" class="form-control" id="sumbersurat" placeholder="Asal Surat Masuk dari ....">
+                      <input type="text" class="form-control" name="sumber_surat" id="sumbersurat" placeholder="Asal Surat Masuk dari ...." required>
                     </div>
                   </div>
 
@@ -103,7 +108,7 @@
                       <label for="inputEmail3" class="col-form-label">Perihal</label>
                     </div>
                      <div class="col-sm-4">
-                      <input type="email" class="form-control" id="Perihal" placeholder="Perihal Surat ....">
+                      <input type="text" class="form-control" name="perihal" id="Perihal" placeholder="Perihal Surat ...." required>
                     </div>
                     <div class="col-sm-2">
                       <label for="nosurat" class="col-form-label">Tanggal Masuk</label>
@@ -118,7 +123,7 @@
 
                       </div>
                       <div class="col-sm-10">
-                        <textarea class="form-control" rows="4" placeholder="Isi Surat Masuk"></textarea>
+                        <textarea class="form-control" rows="4" name="isi_surat" placeholder="Isi Surat Masuk" required></textarea>
                       </div>
                   </div>
                   <div class="form-group row">
@@ -127,8 +132,7 @@
                     </div>
                     <div class="col-sm-10">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" class="form-control" name="file" id="file" required>
                       </div>
                     </div>
                   </div>
@@ -138,41 +142,42 @@
                       <label for="format" class="col-form-label">Format</label>
                     </div>
                     <div class="col-sm-4">
-                      <select class="form-control">
+                      <select class="form-control" name="formats" >
                         <option>- Pilih Format - </option>
-                        <option value="2">Bandel</option>
-                        <option value="3">Buku</option>
-                        <option value="4">Laporan</option>
-                        <option value="5">Akta</option>
-                        <option value="6">Daftar</option>
-                        <option value="7">Buletin</option>
-                        <option value="8">Artikel</option>
-                        <option value="9">Foto</option>
-                        <option value="10">Naskah</option>
-                        <option value="11">Data</option>
-                        <option value="12">Surat</option>
-                        <option value="13">Liturgi</option>
-                        <option value="14">Kaset</option>
-                        <option value="15">Proposal</option>
-                        <option value="16">Jadwal</option>
-                        <option value="17">Gambar</option>
-                        <option value="18">Formulir</option>
-                        <option value="19">Majalah</option>
-                        <option value="20">Koran</option>
-                        <option value="21">Kliping</option>
-                        <option value="22">Telegram</option>
-                        <option value="23">Memo</option>
-                        <option value="24">Wasel</option>
-                        <option value="25">Kwitansi</option>
-                        <option value="26">Bagan</option>
-                        <option value="27">makalah</option>
+                        <option value="Bandel">Bandel</option>
+                        <option value="Buku">Buku</option>
+                        <option value="Laporan">Laporan</option>
+                        <option value="Akta">Akta</option>
+                        <option value="Daftar">Daftar</option>
+                        <option value="Buletin">Buletin</option>
+                        <option value="Artikel">Artikel</option>
+                        <option value="Foto">Foto</option>
+                        <option value="Naskah">Naskah</option>
+                        <option value="Data">Data</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Liturgi">Liturgi</option>
+                        <option value="Kaset">Kaset</option>
+                        <option value="Proposal">Proposal</option>
+                        <option value="Jadwal">Jadwal</option>
+                        <option value="Gambar">Gambar</option>
+                        <option value="Formulir">Formulir</option>
+                        <option value="Majalah">Majalah</option>
+                        <option value="Koran">Koran</option>
+                        <option value="Kliping">Kliping</option>
+                        <option value="Telegram">Telegram</option>
+                        <option value="Memo">Memo</option>
+                        <option value="Wasel">Wasel</option>
+                        <option value="Kwitansi">Kwitansi</option>
+                        <option value="Bagan">Bagan</option>
+                        <option value="Makalah">Makalah</option>
                       </select>
                     </div>
                     <div class="col-sm-2">
                       <label for="Prioritas" class="col-form-label">Prioritas</label>
                     </div>
                     <div class="col-sm-4">
-                      <select class="form-control">\
+                      <select class="form-control" name="prioritas">
+                        <option>-- Pilih Prioritas --</option>
                         <option>Sangat Penting</option>
                         <option>Segera</option>
                         <option>Biasa</option>

@@ -33,10 +33,57 @@
           <div class="card-header">
             <h3 class="card-title">Tabel Pengguna</h3>
               <div class="text-right">
-                    <a href="#" class="btn btn-sm btn-info">
+                    <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-add">
                     <i class="fas fa-users"></i> Tambah Pengguna
                 </a>
               </div>
+
+              {{--    Modals Untuk Tambah Pengguna--}}
+              <div class="modal fade" id="modal-add">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title">Tambah Pengguna</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <form method="POST" action="http://localhost:8000/api/users">
+                                  @csrf
+                                  <div>
+                                      <label for="name">Nama Pengguna</label>
+                                      <input type="text" class="form-control" id="recipient-name" name="name"  placeholder="Nama Pengguna">
+                                  </div>
+
+                                  <div>
+                                      <label for="email">E-mail</label>
+                                      <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+                                  </div>
+                                  <div>
+                                      <label for="role">Role</label>
+                                      <select class="form-control" name="role">
+                                          <option>-- Pilih Role --</option>
+                                          <option value="1">Petugas Administrasi</option>
+                                          <option value="2">Sekretaris Umum</option>
+                                      </select>
+                                  </div>
+
+
+                          </div>
+                          <div class="modal-footer justify-content-between">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-default float-right bg-gradient-info">Simpan</button>
+                          </div>
+                          </form>
+                      </div>
+                      <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+              </div>
+              {{--End Of Modals Add--}}
+
+
           </div>
           <div class="card-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">

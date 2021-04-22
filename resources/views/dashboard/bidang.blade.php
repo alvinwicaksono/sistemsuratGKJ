@@ -33,10 +33,46 @@
           <div class="card-header">
             <h3 class="card-title">Tabel Bidang</h3>
               <div class="text-right">
-                    <a href="#" class="btn btn-sm btn-info">
+                    <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-add">
                     <i class="fas fa-users"></i> Tambah Bidang
                 </a>
               </div>
+
+              {{--    Modals Untuk Tambah Bidang--}}
+              <div class="modal fade" id="modal-add">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title">Tambah Bidang</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <form method="POST" action="http://localhost:8000/api/bidang">
+                                  @csrf
+                                  <div>
+                                      <label for="kode_bidang">Kode Bidang</label>
+                                      <input type="text" class="form-control" id="recipient-name" name="kode_bidang"  placeholder="Kode Bidang">
+                                  </div>
+
+                                  <div>
+                                      <label for="nama_bidang">Nama </label>
+                                      <input type="text" class="form-control" id="nama_bidang" name="nama_bidang" placeholder="Nama Bidang">
+                                  </div>
+
+                          </div>
+                          <div class="modal-footer justify-content-between">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-default float-right bg-gradient-info">Simpan</button>
+                          </div>
+                          </form>
+                      </div>
+                      <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+              </div>
+              {{--End Of Modals Add--}}
           </div>
           <div class="card-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
@@ -53,7 +89,7 @@
                 <tr>
 	                <td>{{ ++$no }}</td>
 	                <td>{{ $item->kodebidang }}</td>
-	                <td>{{ $item->namabidang }}</td>              
+	                <td>{{ $item->namabidang }}</td>
 	                <td>
                         <div class="text-left">
                           <a href="#" class="btn btn-sm bg-warning" data-toggle="modal" data-target="#modal-edit">
@@ -62,7 +98,7 @@
                           <a href="#" class="btn btn-sm bg-danger" data-toggle="modal" data-target="#modal-delete">
                             <i class="fas fa-trash"></i>
                           </a>
-                        </div>                             
+                        </div>
                       </div>
 	                </td>
                 </tr>
@@ -94,7 +130,7 @@
               <p>Isi Rekomendasi</p>
               <br>
               <p>Telah diperiksa</p>
-            </div>  
+            </div>
             <div class="col-md6">
               <p>: 12 April 2020</p>
               <p>: SK/2020/B1/SB102/1001</p> <!-- belum dikirimkan/belum diacc maka tidak muncul -->
@@ -103,9 +139,9 @@
               <p>: Segera Buat Surat Tugas Untuk<br>
               Pdt. Aris Widaryanto</p>
               <p>: Pdt. Sundoyo(sekum)</p> <!-- belum diacc/divalidasi maka tidak muncul -->
-            </div>  
+            </div>
           </div>
-          
+
 
         </div>
         <div class="modal-footer justify-content-between">

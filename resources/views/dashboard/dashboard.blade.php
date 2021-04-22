@@ -181,7 +181,7 @@
                 </div>
                 <!-- /.row -->
               </div>
-              <!-- ./card-body -->           
+              <!-- ./card-body -->
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
@@ -208,21 +208,13 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            @foreach($sm as $sm)
                            <div class="direct-chat-infos clearfix">
-                                <span class="direct-chat-name float-left"><a href="#">Universitas Kristen Duta Wacana</a></span>
-                                <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                                <span class="direct-chat float-left">Laporan Penerimaan Beasiswa</span>
+                                <span class="direct-chat-name float-left"><a href="#">{{$sm['nama_surat']}}</a></span>
+                                <span class="direct-chat-timestamp float-right">{{ date('d F Y', strtotime($sm['tgl_masuk']))}}</span><br>
+                                <span class="direct-chat float-left">{{$sm['perihal']}}</span>
                             </div>
-                            <div class="direct-chat-infos clearfix">
-                                <span class="direct-chat-name float-left"><a href="#">Universitas Kristen Duta Wacana</a></span>
-                                <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                                <span class="direct-chat float-left">Laporan Penerimaan Beasiswa</span>
-                            </div>
-                            <div class="direct-chat-infos clearfix">
-                                <span class="direct-chat-name float-left"><a href="#">Universitas Kristen Duta Wacana</a></span>
-                                <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                                <span class="direct-chat float-left">Laporan Penerimaan Beasiswa</span>
-                            </div>
+                            @endforeach
                         </div>
 
                       <!-- /.card-body -->
@@ -268,7 +260,7 @@
                     <a href="javascript::">Lihat Semua Surat Keluar</a>
                   </div>
                     </div>
-            <!-- /.card --> 
+            <!-- /.card -->
                 </div>
 
                 <div class="col-md-4">
@@ -286,7 +278,14 @@
                         </div>
 
                         <div class="card-body">
-                            Log aktivitas
+                            @foreach($sts as $sts)
+                                <div class="direct-chat-infos clearfix">
+                                    <span class="direct-chat-name float-left"><a href="#">{{$sts['nama_surat']}}</a></span>
+                                    <span class="direct-chat-timestamp float-right">{{ date('d F Y', strtotime($sts['pada']))}} Pukul  {{ date('h:i:sa', strtotime($sts['pada']))}} </span><br>
+                                    <span class="direct-chat float-left">{{$sts['Oleh']}}</span>
+                                    <span class="direct-chat-timestamp float-right">{{ $sts['status']}}</span>
+                                </div>
+                            @endforeach
                         </div>
                       <!-- /.card-body -->
                       <div class="card-footer text-center">
